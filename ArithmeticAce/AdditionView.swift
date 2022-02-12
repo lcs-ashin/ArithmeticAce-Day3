@@ -118,9 +118,20 @@ struct AdditionView: View {
                 
             }
             
-            // Show the reaction animation
-            
-            
+            ZStack {
+                
+                // Show the reaction animation - correct answer
+                LottieView(animationNamed: "62717-confetti")
+                    // Only show the animation when the answer given is correct
+                    .opacity(answerCorrect == true ? 1.0 : 0.0)
+                
+                // Show the reaction animation - incorrect answer
+                LottieView(animationNamed: "35271-try-again")
+                    // Only show the animation when the answer given is incorrect
+                    .opacity(answerChecked == true && answerCorrect == false ? 1.0 : 0.0)
+                
+            }
+
             Spacer()
         }
         .padding(.horizontal)
