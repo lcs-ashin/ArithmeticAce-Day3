@@ -63,6 +63,7 @@ struct AdditionView: View {
                 TextField("",
                           text: $inputGiven)
                     .multilineTextAlignment(.trailing)
+                    .keyboardType(.numberPad)
             }
             
             ZStack {
